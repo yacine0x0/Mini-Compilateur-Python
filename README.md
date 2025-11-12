@@ -1,32 +1,52 @@
-# Mini-Compilateur-Python
+# 🐍 Mini-Python-Compiler
 
-## Un Mini - Compilateur pour le language de programmation Python, qui fait l'analyse lexicale et syntaxique uniquement.
+## 📘 Overview
+A **Mini Compiler** for the **Python programming language**, performing **only lexical and syntax analysis**.
 
-## Description
-Ce projet a été réalisé en tant que travail individuel durant le mois de Novembre 2025, ça représente mes travaux sur le projet du module Compilation de l'année académique 2025/2026 à l'université Abderrahmane Mira de Bejaia. Rendu le 28 Novembre 2025.
+---
 
-## Info Technique
-* Language utilisé: Java.
-* Langauge supporté par le compilateur: Python..
-* Instructions supporté:    - Déclaration de variables  
-                            - Affectation (inclure expression logique et arithmetique)  
-                            - Comparaison  
-                            - Incrémentation et décrémentation  
-                            - Structures de contrôle  
-*Interface graphique incluse (developpée avec Swing).  
-* Rapport de projet disponible sur demande.  
+## 🧾 Description
+This project was completed as an **individual assignment** during **November 2025**.  
+It represents my work for the **Compilation module project** of the **2025/2026 academic year** at **Abderrahmane Mira University of Bejaia**.  
+📅 **Submission Date:** November 28, 2025.
 
- !!! Notice !!! 
- <<La seule structure de controle vérifiée par l'analyseur syntaxique est while(){}, les autres sont ignorées -suivant les régles du projet->> 
+---
 
-## Guide d'utilisation
+## ⚙️ Technical Information
 
-1- Lancer le fichier 'exe' l'executable dans le dossier 'executable'  
-2- L'interface sera affiché:   
-- Vous avez le champ intitulé 'Code' au vous allez saisir votre code en Python.  
-- Le champs en bas 'Logs' vous affiche tout erreur trouvée, où elle se trouve, et des suggestions, durant la compilation et le succés du code si vous avez réussi à écrire un bon programme.  
+- **Programming Language Used:** Java  
+- **Language Supported by the Compiler:** Python  
+- **Supported Instructions:**  
+  - Variable declaration  
+  - Assignment (including logical and arithmetic expressions)  
+  - Comparison  
+  - Increment and decrement  
+  - Control structures  
+- **Graphical Interface:** Included (developed with Swing)  
+- **Project Report:** Available upon request  
 
-3- Veuillez cliquer sur le button [Compiler] aprés que vous avez fini la saisie de votre code.  
-  
-## Consigne pour l'utilisation
-En cas de réutilisation du code, veuillez m'indiquer en tant que auteur de ce projet (mon nom et prénom ou bien mon profile github ou LinkedIn), je serait reconnaissant pour ce geste car il m'aidera, en tant que étudiant, à atteindre plus de gens dans le coté professionnel.
+> ⚠️ **Notice:**  
+> The only control structure verified by the syntax analyzer is `while() {}`.  
+> All others are ignored — following the project rules.
+
+---
+
+## 🧭 User Guide
+
+1. Launch the executable file `'exe'` located in the **`executable`** folder.  
+2. Once the interface appears:  
+   - In the **“Code”** field, enter your Python code.  
+   - The **“Logs”** field (at the bottom) will display:  
+     - Any errors found  
+     - Their locations and suggestions  
+     - A success message if your code compiles correctly  
+3. Click the **[Compile]** button once you have finished writing your code.
+
+---
+
+## 🙏 Usage Notice
+If you reuse this code, please **credit me as the author** of this project  
+(by mentioning my full name or linking to my **GitHub** or **LinkedIn** profile).  
+
+Your acknowledgment would be greatly appreciated — it helps me, as a student,  
+reach more people in the professional field. 💼

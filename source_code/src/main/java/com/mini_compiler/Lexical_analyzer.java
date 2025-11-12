@@ -1,5 +1,5 @@
 package com.mini_compiler;
 
-public class Gestion_erreur {
+public class Lexical_analyzer {
     
 }

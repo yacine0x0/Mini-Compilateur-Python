@@ -1,5 +1,5 @@
 package com.mini_compiler;
 
-public class Analyseur_lexical {
+public class Syntax_analyzer {
     
 }
