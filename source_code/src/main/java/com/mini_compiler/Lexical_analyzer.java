@@ -22,7 +22,94 @@ public class Lexical_analyzer {
 
     private static final int LEXICAL_ERROR = 2;
     
+    //current character checker for complex indicator only
+    private static int terme_complex(char tc){
+        if (tc >= 0 && tc <= 9) {
+            return 0;
+        }
+        if (tc == '.') {
+            return 1;
+        }
+        if (tc == '+') {
+            return 2;
+        }
+        if (tc == 'j') {
+            return 3;
+        }
+        return 4;
+    }
 
+    //Complex data type indicator
+    private static boolean constantIsComplex(String lexical_unit){
+        int[][] matrice  = {
+        {1,-1,-1,-1,-1},
+        {1,3,2,-1,-1},
+        {5,-1,-1,-1,-1},
+        {4,-1,-1,-1,-1},
+        {4,-1,2,-1,-1},
+        {5,6,-1,8,-1},
+        {7,-1,-1,-1,-1},
+        {7,-1,-1,8,-1},
+        {-1,-1,-1,-1,-1}};
+
+        lexical_unit = lexical_unit + "#";
+        int i = 0;
+        int etat_courant = 0;
+        int vf = 2;
+        while (lexical_unit.charAt(i) != '#' && matrice[etat_courant][terme_complex(lexical_unit.charAt(i))] != -1) {
+
+            etat_courant = matrice[etat_courant][terme_complex(lexical_unit.charAt(i))];
+
+            i++;
+        }
+
+         if ((lexical_unit.charAt(i) == '#' && etat_courant == vf) && i == lexical_unit.length()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    
+    //current character checker for float indicator only
+    private static int terme_float(char tc){
+        if (tc >= 0 && tc <= 9) {
+            return 0;
+        }
+        if (tc == '.') {
+            return 1;
+        }
+        return 2;
+    }
+
+    //Float data type indicator
+    private static boolean constantIsFloat(String lexical_unit){
+        int[][] matrice  = {
+        {1,-1,-1},
+        {1,2,-1},
+        {3,-1,-1},
+        {3,-1,-1}};
+
+        lexical_unit = lexical_unit + "#";
+        int i = 0;
+        int etat_courant = 0;
+        int vf = 3;
+        while (lexical_unit.charAt(i) != '#' && matrice[etat_courant][terme_float(lexical_unit.charAt(i))] != -1) {
+
+            etat_courant = matrice[etat_courant][terme_float(lexical_unit.charAt(i))];
+
+            i++;
+        }
+
+         if ((lexical_unit.charAt(i) == '#' && etat_courant == vf) && i == lexical_unit.length()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    
+    //current character checker for integers only
     private static int terme_int(char tc){
         if (tc >= 0 && tc <= 9) {
             return 0;
@@ -30,7 +117,32 @@ public class Lexical_analyzer {
         return 1;
     }
 
-    //current character checker terme-courant
+    //Integer data type indicator
+    private static boolean constantIsInteger(String lexical_unit){
+        int[][] matrice  = {
+        {1,-1},
+        {1,-1}};
+
+        lexical_unit = lexical_unit + "#";
+        int i = 0;
+        int etat_courant = 0;
+        int vf = 1;
+        while (lexical_unit.charAt(i) != '#' && matrice[etat_courant][terme_int(lexical_unit.charAt(i))] != -1) {
+
+            etat_courant = matrice[etat_courant][terme_int(lexical_unit.charAt(i))];
+
+            i++;
+        }
+
+         if ((lexical_unit.charAt(i) == '#' && etat_courant == vf) && i == lexical_unit.length()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    //current character checker terme-courant for identifiers only
     private static int terme(char tc){
         if (tc == '_') {
             return 0;
@@ -95,6 +207,15 @@ public class Lexical_analyzer {
         if (unitIsIdentifer(lexical_unit)) {
             return "IDENTIFIER";
         }
+        if (constantIsComplex(lexical_unit)) {
+            return "COMPLEX";
+        }
+        if (constantIsFloat(lexical_unit)) {
+            return "FLOAT";
+        }
+        if (constantIsInteger(lexical_unit)) {
+            return "INETEGER";
+        }
 
         //CALL ERROR FUNCTION HERE !!!!
 
@@ -122,7 +243,7 @@ public class Lexical_analyzer {
                 
 
             }
-                
+                scan.close();
             } catch (FileNotFoundException e) {
             System.out.println("File not found!");
             }
