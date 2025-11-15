@@ -61,7 +61,7 @@ public class Lexical_analyzer {
         }
     }
 
-    public static String unitType(String lexical_unit){
+    public static String Tokenizer(String lexical_unit){
         
         for (String keyword : KEYWORDS) {
             if (lexical_unit == keyword) {
